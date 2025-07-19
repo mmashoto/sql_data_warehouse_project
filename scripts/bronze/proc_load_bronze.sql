@@ -44,7 +44,7 @@ BEGIN
 		);
 		SET @end_time = GETDATE();
 		PRINT '>> Load Duration: ' + CAST (DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
-		PRINT '.................................'
+		PRINT '.................................';
 
 
 		SET @start_time = GETDATE();
@@ -60,7 +60,7 @@ BEGIN
 		);
 		SET @end_time = GETDATE();
 		PRINT '>> Load Duration: ' + CAST (DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
-		PRINT '.................................'
+		PRINT '.................................';
 
 		SET @start_time = GETDATE();
 		PRINT '>> Truncate Table: bronze.crm_sales_details';
@@ -95,7 +95,7 @@ BEGIN
 		);
 		SET @end_time = GETDATE();
 		PRINT '>> Load Duration: ' + CAST (DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
-		PRINT '.................................'
+		PRINT '.................................';
 
 		SET @start_time = GETDATE();
 		PRINT '>> Truncate Table: bronze.erp_loc_a101';
@@ -110,7 +110,7 @@ BEGIN
 		);
 		SET @end_time = GETDATE();
 		PRINT '>> Load Duration: ' + CAST (DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
-		PRINT '.................................'
+		PRINT '.................................';
 
 		SET @start_time = GETDATE();
 		PRINT '>> Truncate Table: bronze.erp_px_cat_g1v2';
@@ -125,7 +125,7 @@ BEGIN
 		);
 		SET @end_time = GETDATE();
 		PRINT '>> Load Duration: ' + CAST (DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
-		PRINT '.................................'
+		PRINT '.................................';
 
 		SET @batch_end_time = GETDATE();
 		PRINT '=====================================================================';
