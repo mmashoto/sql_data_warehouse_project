@@ -5,7 +5,7 @@ DDL Script: Create Bronze Tables
 Script Purpose:
     This script creates tables in the 'bronze' schema, dropping existing tables 
     if they already exist. Run this script to re-define the DDL structure of 
-	'bronze' Tables.
+    'bronze' Tables.
 ===============================================================================
 */
 
@@ -21,7 +21,7 @@ CREATE TABLE silver.crm_cust_info(
     cst_marital_status  NVARCHAR(50),
     cst_gndr            NVARCHAR(50),
     cst_create_date     DATE,
-	dwh_create_date     DATETIME2 DEFAULT GETDATE()
+    dwh_create_date     DATETIME2 DEFAULT GETDATE()
 );
 GO
 
@@ -30,7 +30,7 @@ IF OBJECT_ID ('silver.crm_prd_info' ,  'U') IS NOT NULL
     DROP TABLE silver.crm_prd_info;
 CREATE TABLE silver.crm_prd_info (
     prd_id            INT,
-	cat_id            NVARCHAR(50),
+    cat_id            NVARCHAR(50),
     prd_key           NVARCHAR(50),
     prd_nm            NVARCHAR(50),
     prd_cost          INT,
@@ -63,7 +63,7 @@ CREATE TABLE silver.erp_cust_az12 (
     cid                 NVARCHAR(50),
     bdate               DATE,
     gen                 NVARCHAR(50),
-	dwh_create_date     DATETIME2 DEFAULT GETDATE()
+    dwh_create_date     DATETIME2 DEFAULT GETDATE()
 );
 GO
 
@@ -73,7 +73,7 @@ IF OBJECT_ID ('silver.erp_loc_a101' ,  'U') IS NOT NULL
 CREATE TABLE silver.erp_loc_a101 (
     cid                 NVARCHAR(50),
     cntry               NVARCHAR(50),
-	dwh_create_date     DATETIME2 DEFAULT GETDATE()
+    dwh_create_date     DATETIME2 DEFAULT GETDATE()
 );
 GO
 
