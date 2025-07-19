@@ -23,7 +23,7 @@ Data Model: None ( As-is)
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
 ![Data Architecture](docs/medallion_architecture.gif)
 
-This link **[here](docs/data_architecture )** provide a more detailed diagram of the the architecture 
+This link **[here](docs/high_level_architecture.png)** provide a more detailed diagram of the the architecture 
 
 1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
