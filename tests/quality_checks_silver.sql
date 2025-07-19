@@ -13,7 +13,7 @@ Script Purpose:
 
 Usage Notes:
      - Run this checks after data loading Silver Layer.
-	 - Investigate and resolve any discrepancies found during the checks.
+     - Investigate and resolve any discrepancies found during the checks.
 =================================================================================
 */
 
@@ -27,7 +27,7 @@ Usage Notes:
 -- Expectation : No results 
 SELECT 
      cst_id,
-	 COUNT(*) 
+     COUNT(*) 
 FROM silver.crm_cust_info
 GROUP BY cst_id
 HAVING COUNT(*) > 1 OR cst_id IS NULL;
@@ -36,11 +36,11 @@ HAVING COUNT(*) > 1 OR cst_id IS NULL;
 -- Expectation = No results
 SELECT 
      cst_firstname, 
-	 cst_lastname
+     cst_lastname
 FROM silver.crm_cust_info
 WHERE 
-     (cst_firstname <>  TRIM(cst_firstname)) OR 
-	 (cst_lastname <> TRIM(cst_lastname));
+     (cst_firstname <>  TRIM(cst_firstname)) OR  
+     (cst_lastname <> TRIM(cst_lastname));
 
 -- Data standardization and consistency
 SELECT DISTINCT cst_gndr
@@ -48,9 +48,9 @@ FROM bronze.crm_cust_info
 
 /*  
 Usage Notes:
-Aim to store values that are meaningful & clear rather than using abbreviated terms.
+Aim to store values that are meaningful & clear, rather than using abbreviated terms.
 Hint:
-- F= Female
+- F = Female
 - M = Male
 - NULLS = 'n/a' or 'unknown'
 */
@@ -58,7 +58,7 @@ Hint:
 -- ==============================================================================
 -- Checking 'silver.crm_prd_info'
 -- ==============================================================================
--- Check for NULLS or duplicate in Primary keys
+-- Check for NULLS or duplicates in Primary keys
 -- Expectation : No results 
 SELECT 
      prd_id,
@@ -84,7 +84,7 @@ WHERE prd_cost IS NULL OR prd_cost< 0;
 -- field 'prd_line'
 /*  
 Usage Notes:
-Aim to store values that are meaningful & clear rather than using abbreviated terms
+Aim to store values that are meaningful & clear, rather than using abbreviated terms
 to increase cardinality.
 Hint: Find out what the abbreviation stand for from the source expert.
 */
@@ -92,7 +92,7 @@ SELECT DISTINCT(prd_line)
 FROM silver.crm_prd_info;
 
 -- Checking for invalid dates ranges and orders 
--- Hint: The end date < the start date 
+-- Hint: The end date <  start date 
 -- Expectation : No results
 SELECT *
 FROM silver.crm_prd_info
