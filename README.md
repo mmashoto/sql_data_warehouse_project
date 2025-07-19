@@ -79,7 +79,7 @@ These insights empower stakeholders with key business metrics, enabling strategi
 
 For more details, refer to [insert the path here]
 
-## 📂 Repository Structure
+## Repository Structure
 ```
 data-warehouse-project/
 │
@@ -108,13 +108,13 @@ data-warehouse-project/
 ---
 
 
-## 🛡️ License
+## License
 
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
 
 ## Credits
 
-## 🌟 About Me
+## About Me
 
 Let's stay in touch! Feel free to connect with me on the following platforms:
  
