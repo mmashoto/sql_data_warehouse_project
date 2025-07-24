@@ -1,5 +1,7 @@
+# SQL Data Warehouse Project
 
-# sql_data_warehouse_project
+Welcome to the **Data Warehouse** repository!
+This project demonstrates a comprehensive data warehousing solution.
 
 Object Type: Tables
 Load:
@@ -16,21 +18,20 @@ No transformation
 Data Model: None ( As-is)
 
 ---
-##  Data Architecture
+## Data Architecture
 
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
-![Data Architecture](docs/data_architecture.gif)
+![Data Architecture](docs/medallion_architecture.gif)
+
+This link **[here](docs/high_level_architecture.png)** provide a more detailed diagram of the the architecture 
 
 1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
 3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
+
 ---
 
-A comprehensive collection of SQL scripts for data exploration, analytics, and reporting. These scripts cover various analyses such as database exploration, measures and metrics, time-based trends, cumulative analytics, segmentation, and more.
-This repository contains SQL queries designed to help data analysts and BI professionals quickly explore, segment, and analyze data within a relational database. Each script focuses on a specific analytical theme and demonstrates best practices for SQL queries.
-
-
-## 📂 Repository Structure
+## Repository Structure
 ```
 data-warehouse-project/
 │
@@ -53,19 +54,18 @@ data-warehouse-project/
 │
 ├── README.md                           # Project overview and instructions
 ├── LICENSE                             # License information for the repository
-├── .gitignore                          # Files and directories to be ignored by Git
-└── requirements.txt                    # Dependencies and requirements for the project
+└── gitignore                           # Files and directories to be ignored by Git
 ```
 ---
 
 
-## 🛡️ License
+## License
 
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
 
 ## Credits
 
-## 🌟 About Me
+## About Me
 
 Let's stay in touch! Feel free to connect with me on the following platforms:
  
