@@ -1,44 +1,105 @@
 # SQL Data Warehouse Project
 
 Welcome to the **Data Warehouse** repository!
-This project demonstrates a comprehensive guide to building and managing a SQL data warehouse covering design principles, data modeling, ETL and best practices.
 
-Object Type: Tables
-Load:
-Batch Processing
-Full Load (Truncate & Insert)
-No transformation
-Data Model: None ( As-is)
+This project delivers a scalable data warehousing solution that integrates data from various sources, empowering data-driven decision-making through a robust data architecture, ETL pipeline, and  data modeling. By leveraging industry best practices and a medallion data architecture(Bronze, Silver, and Gold), this solution ensures data quality, consistency and reliability.
+
+## Project Overview
+
+1. Data Ingestion: Collect data from two data systems (ERP and CRM) provided as CSV files
+2. Data Transformation: Transform the data into usable format.
+3. Data Quality: Implement data quality checks to ensure data accuracy and consistency.
+4. Data Storage: Design a scalable data storage solution.
+5. Data Modeling: Develop a data model to support BI and reporting.
 
 ## Data Architecture
+
+### Medallion Architecture
 
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
 ![Data Architecture](docs/medallion_architecture.gif)
 
-This link **[here](docs/high_level_architecture.png)** provide a more detailed diagram of the the architecture
+This link **[here](docs/high_level_architecture.png)** provide a more detailed diagram of the data .
 
 1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to improve the data's quality and usability, and prepares the it for analysis.
 3. **Gold Layer**: Data is aggregated, summarized, and modeled into a star schema for analytics and reporting, providing business-ready insights and metrics.
 
-## Data flow Diagram
+![Data flow diagram](docs/data_flow_diagram.png)
 
-![Data Flow Diagram](docs/data_flow_diagram.png)
+The diagram illustrates the flow of data through the Bronze, Silver and Gold layers, showcasing the movement od data between tables within each layer. It provide a clear representation of the data architecture and the relationships between the different entities.
 
-## Data Model
+## Implementation Details 
 
-![Data Model](docs/data_model.png)
+### ETL  pipeline
 
-The data model comprises of a network of interconnected entities that facilitate the management of customer transactions. At its core, the model defines the relations between the customers, orders and products.
+|           | Bronze   | Silver   |  Gold    |
+|:----------|----------|----------|----------|
+|**Object Type**|   Tables     |    Tables    |    None    |
+|**Load Method**|    Full Load (*Truncate & Insert*)    |    Full Load (*Truncate & Insert*)     |    None    |
+|**Data Transformation**|   None    |    <ul><li>Data **Cleaning**</li><li>Data **Standardization**</li><li>Data **Normalization**</li><li>Data **Enrichment**</li></ul>  |    <ul><li>Data **Integration**</li><li>Data **Aggregation**</li><li>**Business Logic & Rules**</li></ul>  |
+|**Data Modeling**|   None      |    None    |    <ul><li>**Star Schema**</li><li>**Aggregated Objects**</li><li>**Flat Tables**</li></ul>   |
 
-* **Customers** initiate the orders, which are uniquely identified.
-* **Orders** are comprised of a multiple of order items, each referencing a specific ```product```, and ```quantity```.
-* **Products** are categorized into categories and subcategories, enabling hierarchical product classification. They also have distinct attributes such as ```product_id```, ```product_name``` and ```price```.
 
-## Intergration Model
+### Data Quality Checks
+
+To ensure the integrity and reliability of the dataset, a series of data quality checks for the silver and gold layer were done. The following code illustrates a snippet of thus quality checks from the silver layer.
+
+```sql
+-- ------------------------------------CRM Tables--------------------------------
+-- ==============================================================================
+-- Checking 'silver.crm_cust_info'
+-- ==============================================================================
+-- Check for NULLS or duplicate keys
+-- Expectation : No results 
+SELECT 
+     cst_id,
+     COUNT(*) 
+FROM silver.crm_cust_info
+GROUP BY cst_id
+HAVING COUNT(*) > 1 OR cst_id IS NULL;
+
+-- Checking for unwanted spaces
+-- Expectation = No results
+SELECT 
+     cst_firstname, 
+     cst_lastname
+FROM silver.crm_cust_info
+WHERE 
+     (cst_firstname <>  TRIM(cst_firstname)) OR  
+     (cst_lastname <> TRIM(cst_lastname));
+
+-- Data standardization and consistency
+SELECT DISTINCT cst_gndr
+FROM bronze.crm_cust_info
+
+```
+For a more comprehensive overview of the data quality checks and results, please refer to the  [data_quality_checks](/tests/)
+
+## Integration
 
 ![Integration Model](docs/integration_model.png)
 
+## Data Modeling
+
+The data model is designed to support efficient querying and analysis. It includes
+
+* **Fact Table** (```gold.fact_orders```): Contain measurable data.
+* **Dimension Tables** (```gold.dim_customers``` and ```gold.dim_products```): Provide context for analysis.
+* **Data Marts**: Subsets of the data warehouse, focused on the specific business value. 
+
+![Data Model](docs/data_model.png)
+ 
+### Tools and technology
+
+- **[Datasets](datasets/):** Access to the project dataset (csv files).
+- **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Lightweight server for hosting your SQL database.
+- **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** GUI for managing and interacting with databases.
+- **[Git Repository](https://github.com/):** Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
+- **[Git](link):** Track and revise changes.
+- **[Visual Studio Code](link):** Write, debug and test SQL scripts and analytics code.
+- **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
+- **[Notion](https://www.notion.com/):** All-in-one tool for project management and organization.
 
 ## Repository Structure
 
@@ -74,6 +135,8 @@ data-warehouse-project/
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
 
 ## Credits
+
+[Data With Baraa](link here)
 
 ## About Me
 
