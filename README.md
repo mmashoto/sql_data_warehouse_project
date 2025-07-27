@@ -2,15 +2,15 @@
 
 Welcome to the **Data Warehouse** repository!
 
-This project delivers a scalable data warehousing solution that integrates data from various sources, empowering data-driven decision-making through a robust data architecture, ETL pipeline, and  data modeling. By leveraging industry best practices and a medallion data architecture(Bronze, Silver, and Gold), this solution ensures data quality, consistency and reliability.
+This project delivers a scalable data warehousing solution that integrates data from various sources, empowering data-driven decision-making through a robust data architecture, ETL pipeline, and  data modeling. By leveraging industry best practices and a medallion data architecture (Bronze, Silver, and Gold), this solution ensures data quality, consistency and reliability.
 
 ## Project Overview
 
-1. Data Ingestion: Collect data from two data systems (ERP and CRM) provided as CSV files
-2. Data Transformation: Transform the data into usable format.
-3. Data Quality: Implement data quality checks to ensure data accuracy and consistency.
-4. Data Storage: Design a scalable data storage solution.
-5. Data Modeling: Develop a data model to support BI and reporting.
+1. **Data Ingestion**: Collect data from two data systems (ERP and CRM) provided as CSV files.
+2. **Data Transformation**: Transform the data into usable format.
+3. **Data Quality**: Implement data quality checks to ensure data accuracy and consistency.
+4. **Data Storage**: Design a scalable data storage solution.
+5. **Data Modeling**: Develop a data model to support BI and reporting.
 
 ## Data Architecture
 
@@ -19,7 +19,7 @@ This project delivers a scalable data warehousing solution that integrates data 
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
 ![Data Architecture](docs/medallion_architecture.gif)
 
-This link **[here](docs/high_level_architecture.png)** provide a more detailed diagram of the data .
+The link **[here](docs/high_level_architecture.png)** provide a more detailed diagram of the data .
 
 1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to improve the data's quality and usability, and prepares the it for analysis.
@@ -27,9 +27,9 @@ This link **[here](docs/high_level_architecture.png)** provide a more detailed d
 
 ![Data flow diagram](docs/data_flow_diagram.png)
 
-The diagram illustrates the flow of data through the Bronze, Silver and Gold layers, showcasing the movement od data between tables within each layer. It provide a clear representation of the data architecture and the relationships between the different entities.
+The diagram illustrates the flow of data through the Bronze, Silver and Gold layers, showcasing the movement of data between tables within each layer. It also provides a clear representation of the data architecture and the relationships between the different entities.
 
-## Implementation Details 
+## Implementation Details
 
 ### ETL  pipeline
 
@@ -82,11 +82,11 @@ For a more comprehensive overview of the data quality checks and results, please
 
 ## Data Modeling
 
-The data model is designed to support efficient querying and analysis. It includes
+The data model is designed to support efficient querying and analysis. It includes:
 
-* **Fact Table** (```gold.fact_orders```): Contain measurable data.
+* **Fact Table** (```gold.fact_orders```): Contains measurable data.
 * **Dimension Tables** (```gold.dim_customers``` and ```gold.dim_products```): Provide context for analysis.
-* **Data Marts**: Subsets of the data warehouse, focused on the specific business value. 
+* **Data Marts**: Subsets of the data warehouse, focused on the specific business value.
 
 ![Data Model](docs/data_model.png)
  
@@ -127,19 +127,16 @@ data-warehouse-project/
 ├── LICENSE                             # License information for the repository
 └── gitignore                           # Files and directories to be ignored by Git
 ```
-
 ---
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
 
-## Credits
+## Author - [Mashoto Makobe](https://github.com/mmashoto)
 
-[Data With Baraa](link here)
-
-## About Me
-
-Let's stay in touch! Feel free to connect with me on the following platforms:
+This project is a part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback or would like to colloborate, feel free to get in touch.
 
 Insert all the platform here
+
+## Credits
