@@ -1,8 +1,24 @@
-# SQL Data Warehouse Project
 
-Welcome to the **Data Warehouse** repository!
+<p align = "center"> 
+   <img src = "docs/terravolt_logo.png" alt=  "Company Logo" width = "300">
+</p>
 
-This project delivers a scalable data warehousing solution that integrates data from various sources, empowering data-driven decision-making through a robust data architecture, ETL pipeline, and  data modeling. By leveraging industry best practices and a medallion data architecture (Bronze, Silver, and Gold), this solution ensures data quality, consistency and reliability.
+<h2 align = "center"><b>TerraVolt Enterprise Data Warehouse(EDW)</b></h2>
+
+## Executive Summary
+
+Founded in **2014**, **TerraVolt** is a global e-commerce enterprise specializing in **bicycles, components, and cycling apparel**. The company operates across multiple continents, leveraging digital platforms to deliver high-performance products to an international customer base.
+As TerraVolt’s operations expanded, its data environment became increasingly complex, with disparate systems generating large volumes of transactional, customer, and operational data. The absence of centralized integration led to data silos, inconsistent reporting, and limited analytical visibility across business functions.
+
+To overcome these challenges, TerraVolt launched the **SQL Data Warehouse Initiative** - a strategic data modernization project designed to consolidate fragmented data sources into a **centralized analytical ecosystem**. This warehouse will enable a single source of truth for business intelligence, support data-driven decision-making, and enhance enterprise performance through reliable, scalable, and governed analytics infrastructure.
+
+## Company Background
+
+**TerraVolt** is a **global e-commerce company**, founded in **2014**, that provides an extensive range of **bikes, cycling components, and apparel**. With operations in **North America, Europe, Asia, and Africa**, TerraVolt has built a strong reputation for digital innovation, product quality, and customer engagement.
+The company’s rapid international growth has led to an increasingly complex data landscape, spanning **ERP, CRM, e-commerce, and marketing systems**. This growth underscored the need for a unified data management framework to enhance operational insight and analytical consistency.
+
+The **SQL EDW project** represents a key milestone in TerraVolt’s data strategy—integrating global data assets into a single, structured, and scalable repository. 
+This project delivers a scalable data warehousing solution that integrates data from various sources, empowering data-driven decision-making through a robust **data architecture, ETL pipeline, and  data modeling**. By leveraging industry best practices and a **medallion data architecture (Bronze, Silver, and Gold)**, this solution ensures data quality, consistency and reliability.
 
 ## Project Overview
 
@@ -41,9 +57,17 @@ The diagram illustrates the flow of data through the Bronze, Silver and Gold lay
 |**Data Modeling**|   None      |    None    |    <ul><li>**Star Schema**</li><li>**Aggregated Objects**</li><li>**Flat Tables**</li></ul>   |
 
 
-### Data Quality Checks
+### Data Quality
 
-To ensure the integrity and reliability of the dataset, a series of data quality checks for the silver and gold layer were done. The following code illustrates a snippet of thus quality checks from the silver layer.
+To ensure the integrity and reliability of the dataset, a series of data quality checks for the silver and gold layer were done.
+
+* **Referential Integrity**: Primary key uniqueness and foreign key relationships
+* **Data Completeness**: NULL value detection in critical fields
+* **Data Consistency**: Establish standardized definitions, cross-table validation, business rules, and transformation logic
+* **Data Format**: Standardized formats and trimmed white spaces
+* **Logical Validation**: Date ranges, calculated field verification
+
+ The following code illustrates a snippet of thus quality checks from the silver layer.
 
 ```sql
 -- ------------------------------------CRM Tables--------------------------------
@@ -74,9 +98,12 @@ SELECT DISTINCT cst_gndr
 FROM bronze.crm_cust_info
 
 ```
+
 For a more comprehensive overview of the data quality checks and results, please refer to the  [data_quality_checks](/tests/)
 
-## Integration
+## Data Integration
+
+Consolidate data from ERP & CRM into a centralized warehouse.
 
 ![Integration Model](docs/integration_model.png)
 
