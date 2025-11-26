@@ -99,8 +99,9 @@ FROM bronze.crm_cust_info
 
 ```
 
-For a more comprehensive overview of the data quality checks and results, please refer to the  [data_quality_checks](/tests/)
-
+For a more comprehensive overview of the data quality checks and results, please refer to the  [data_quality_checks](/tests/).
+A detailed issue log of the ETL pipeline was maintained and it tracked all the records of the anomalies per Medallion Layer and how their were remedied. The log for each incident detailed the specific issue, the root_cause analysis and the corrective action. For the full tracker, please click [**here**](docs/terravolt_changelog.xlsx)
+g
 ## Data Integration
 
 Consolidate data from ERP & CRM into a centralized warehouse.
@@ -116,6 +117,7 @@ The data model is designed to support efficient querying and analysis. It includ
 * **Data Marts**: Subsets of the data warehouse, focused on the specific business value.
 
 ![Data Model](docs/data_model.png)
+
  
 ### Tools and technology
 
@@ -123,10 +125,36 @@ The data model is designed to support efficient querying and analysis. It includ
 - **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Lightweight server for hosting your SQL database.
 - **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** GUI for managing and interacting with databases.
 - **[Git Repository](https://github.com/):** Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
-- **[Git](link):** Track and revise changes.
-- **[Visual Studio Code](link):** Write, debug and test SQL scripts and analytics code.
+- **[Visual Studio Code](https://code.visualstudio.com/):** Write, debug and test SQL scripts and analytics code.
 - **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
 - **[Notion](https://www.notion.com/):** All-in-one tool for project management and organization.
+
+## Clarifying Questions, Assumptions and Caveats
+### Stakeholder Queries Identified During Data Quality Validation
+
+- **Unmatched cat_id (category_id)**
+During transformation and reconciliation, the team identified that CO_PE, a cat_id value in**bronze.prd_info** does not exist in **bronze.erp_px_cat_glv2** This indicates either referential integrity gaps or an incomplete lookup mapping.
+*Clarifying Question: Which upstream system serves as the authoritative source of truth for cat_id — the CRM platform or the ERP system?*
+- **Ambiguous Product Line Codes (prd_line)**
+Entries in the prd_line column contain abbreviated or cryptic codes without a corresponding reference dictionary or metadata definition.
+*Clarifying Question: What is the full expanded meaning of each abbreviated prd_line code, and is there an official reference table documenting these values?*
+- **Products Without Associated Orders**
+A notable proportion of products have no linked order transactions in downstream fact tables. This may indicate:
+  - Missing foreign key relationships,
+  - Incomplete ingestion of order data, or
+  - Products that were created but never commercialised.
+Further clarification is required to understand expected business behaviour.
+- **Invalid Product Lifecycle Date Ranges (prd_start_dt, prd_end_dt)**
+All records present reverse chronological values where the prd_end_dt precedes the prd_start_dt, violating temporal logic rules.
+A remediation approach—validated, tested, and approved—is demonstrated in the accompanying **[PNG file](docs/dates_solution_approved.png)** for stakeholder confirmation.
+
+
+
+
+### Assumptions and Caveats
+- Products without orders: A considerable amount of products dont have orders for the period 201- 2022, which is an anomaly warrantung further examination.
+-
+ 
 
 ## Repository Structure
 
@@ -156,14 +184,7 @@ data-warehouse-project/
 ```
 ---
 
-## License
-
-This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
 
 ## Author - [Mashoto Makobe](https://github.com/mmashoto)
 
 This project is a part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback or would like to colloborate, feel free to get in touch.
-
-Insert all the platform here
-
-## Credits
