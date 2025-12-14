@@ -1,53 +1,156 @@
 
-<p align = "center"> 
+<p align = "center">
    <img src = "docs/terravolt_logo.png" alt=  "Company Logo" width = "300">
 </p>
 
-<h2 align = "center"><b>TerraVolt Enterprise Data Warehouse(EDW)</b></h2>
+<h1 align = "center"><b>TerraVolt Enterprise Data Warehouse(EDW) & Analytics End-to-End Project</b></h1>
+
+<!-----table of content--->  
+
+<h1 id="top"> Table of Contents</h1>
+
+1. [Executive Summary](#executive-summary)  
+2. [Company Background](#company-background)
+3. [Project Overview](#project-overview)
+    - [SQL Data Warehouse Initiative](#sql-data-warehouse-initiative)  
+    2. [EDA & Advanced Analytics Scope](#eda--advanced-analytics-scope)  
+    3. [North Star Metrics](#north-star-metrics)  
+4. [Business Problem Statement](#business-problem-statement)
+5. [Project Requirements](#project-requirements)
+6. [Data Architecture](#data-architecture)
+   1. [Medallion Architecture](#medallion-architecture)  
+   2. [Source System Integration](#source-system-integration)  
+   3. [Data Modeling](#data-modeling)
+7. [ETL Pipeline Design](#etl--pipeline-design)
+8. [Data Quality & Governance](#data-qualtiy--governance)
+9. [Exploratory Data Analysis](#exploratory-data_analysis)
+10. [Advanced Data Analytics](#advanced-data-analytics)
+    1. [Customer Segmentation](#customer-segmentation)
+    2. [Product Performance Analytics](#product-performance-analytics)
+    3. [Analytical Insights & Recommendations](#analytical-insights--recommendations)
+11. [Clarifying Questions, Assumptions & Caveats](#clarifying-questions-assumptions--caveats)
+12. [Repository Structure](#repository-structure)
+13. [Technologies & Tools Used](#technology--tools-used)
+14. [How to Reproduce This Project](#how-to-reproduce-this-project)
+15. [Future Enhancements](#future-enhancements)
+16. [Author](#author)  
 
 ## Executive Summary
 
-Founded in **2014**, **TerraVolt** is a global e-commerce enterprise specializing in **bicycles, components, and cycling apparel**. The company operates across multiple continents, leveraging digital platforms to deliver high-performance products to an international customer base.
+Founded in **2008**, **TerraVolt** is a global e-commerce enterprise specializing in **bicycles, components, and cycling apparel**. The company operates across multiple continents, leveraging digital platforms to deliver high-performance products to an international customer base.
 As TerraVolt’s operations expanded, its data environment became increasingly complex, with disparate systems generating large volumes of transactional, customer, and operational data. The absence of centralized integration led to data silos, inconsistent reporting, and limited analytical visibility across business functions.
 
 To overcome these challenges, TerraVolt launched the **SQL Data Warehouse Initiative** - a strategic data modernization project designed to consolidate fragmented data sources into a **centralized analytical ecosystem**. This warehouse will enable a single source of truth for business intelligence, support data-driven decision-making, and enhance enterprise performance through reliable, scalable, and governed analytics infrastructure.
+
+In addition to the data warehousing build, this project incorporates an advanced Data Analysis and Business Intelligence (BI) capability. This includes comprehensive Exploratory Data Analysis (EDA), statistical profiling, time-series trend evaluation, and customer/product performance analytics. The BI layer strengthens TerraVolt’s ability to derive meaningful insights by enabling dynamic dashboards, KPI monitoring, forecasting foundations, and real-time decision support, ensuring that the SQL warehouse becomes both an analytical engine and a business-facing intelligence platform.
 
 ## Company Background
 
 **TerraVolt** is a **global e-commerce company**, founded in **2014**, that provides an extensive range of **bikes, cycling components, and apparel**. With operations in **North America, Europe, Asia, and Africa**, TerraVolt has built a strong reputation for digital innovation, product quality, and customer engagement.
 The company’s rapid international growth has led to an increasingly complex data landscape, spanning **ERP, CRM, e-commerce, and marketing systems**. This growth underscored the need for a unified data management framework to enhance operational insight and analytical consistency.
 
-The **SQL EDW project** represents a key milestone in TerraVolt’s data strategy—integrating global data assets into a single, structured, and scalable repository. 
+The **SQL EDW project** represents a key milestone in TerraVolt’s data strategy—integrating global data assets into a single, structured, and scalable repository.  
 This project delivers a scalable data warehousing solution that integrates data from various sources, empowering data-driven decision-making through a robust **data architecture, ETL pipeline, and  data modeling**. By leveraging industry best practices and a **medallion data architecture (Bronze, Silver, and Gold)**, this solution ensures data quality, consistency and reliability.
 
 ## Project Overview
 
-1. **Data Ingestion**: Collect data from two data systems (ERP and CRM) provided as CSV files.
-2. **Data Transformation**: Transform the data into usable format.
-3. **Data Quality**: Implement data quality checks to ensure data accuracy and consistency.
-4. **Data Storage**: Design a scalable data storage solution.
-5. **Data Modeling**: Develop a data model to support BI and reporting.
+### SQL Data Warehouse Initiative  
 
-## Data Architecture
+- Data Warehouse: Designing a modern data warehouse using a medallion architecture bronze, silver and gold
+- ETL Pipeline: Extracting,transforming, and loading data from the data systems a into the data warehouse.
+- Data Modeling: Developing fact and dimension tables optimized for analytical queries.
+
+### EDA & Advanced Analytics Scope  
+
+### North Star Metrics  
+
+**Data Warehouse**
+
+1. Data Freshness -->> How quickly data is updated in the warehouse after it changes in source systems.
+2. Pipeline Success Rate -->> Percentage of data pipelines that run successfully without errors.
+3. Data Accuracy & Consistency -->> How accurate and consistent the data is after cleaning and transformation.
+4. Query Performance -->> How fast users can run analytical queries on the warehouse.
+5. Warehouse Adoption -->> How many dashboards, reports, and teams rely on the data warehouse as the primary source.
+6. Reporting Time Reduction -->> How much faster reports are generated compared to before the warehouse existed.
+
+**Customer Segmentation**  
+
+- Customer Lifetime Value (CLV)
+- Repeat Purchase Rate
+- Average Order Value (AOV)
+- Retention Rate
+
+**Product Performance**  
+
+- Top-Selling Products
+- Revenue by Category
+- Conversion Rate
+- Product Return Rate
+
+## Project Requirements
+
+### Building the Data Warehouse (Data Engineering)
+
+#### Objective  
+
+Develop a **SQL Server-based** data warehouse consolidating **sales data** for analytical reporting.  
+
+#### Specifications
+
+1. **Data Ingestion**: Import data from two data systems (ERP and CRM) provided as CSV files.
+2. **Data Quality**: Implement data quality checks to ensure data accuracy and consistency.
+3. **Data Integration**: Merging datasets into a **single user-friendly analytical model**.  
+4. **Data Modeling**: Implementing a **star schema** (fact & dimension tables).
+5. **Data Storage**: Design a scalable data storage solution.
+6. **Scope**: Focus on the latest dataset only; historization if data is not required.
+7. **Documentation**: Provide clear **metadata & model descriptions**.
+
+### BI: Analytical & Reporting (Data Analysis)
+
+#### Objective
+
+Develop SQL based analytics to deliver detailed insights into:
+
+- Customer behaviour
+- Product Performance  
+- Sales trends
+
+## Data Architecture  
 
 ### Medallion Architecture
 
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
 ![Data Architecture](docs/medallion_architecture.gif)
 
-The link **[here](docs/high_level_architecture.png)** provide a more detailed diagram of the data .
+The link **[here](docs/high_level_architecture.png)** provide a more detailed diagram of the data.
 
 1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to improve the data's quality and usability, and prepares the it for analysis.
 3. **Gold Layer**: Data is aggregated, summarized, and modeled into a star schema for analytics and reporting, providing business-ready insights and metrics.
 
-![Data flow diagram](docs/data_flow_diagram.png)
+### Source System Integration
+
+Consolidate data from ERP & CRM into a centralized warehouse.
+
+![Integration Model](docs/integration_model.png)
 
 The diagram illustrates the flow of data through the Bronze, Silver and Gold layers, showcasing the movement of data between tables within each layer. It also provides a clear representation of the data architecture and the relationships between the different entities.
 
-## Implementation Details
+![Data flow diagram](docs/data_flow_diagram.png)
 
-### ETL  pipeline
+### Data Modeling
+
+The data model is designed to support efficient querying and analysis. It includes:
+
+- **Fact Table** (```gold.fact_orders```): Contains measurable data.
+- **Dimension Tables** (```gold.dim_customers``` and ```gold.dim_products```): Provide context for analysis.
+- **Data Marts**: Subsets of the data warehouse, focused on the specific business value.
+
+![Data Model](docs/data_model.png)  
+
+## ETL / ELT Pipeline Design  
+
+**ETL pipeline**
 
 |           | Bronze   | Silver   |  Gold    |
 |:----------|----------|----------|----------|
@@ -56,16 +159,15 @@ The diagram illustrates the flow of data through the Bronze, Silver and Gold lay
 |**Data Transformation**|   None    |    <ul><li>Data **Cleaning**</li><li>Data **Standardization**</li><li>Data **Normalization**</li><li>Data **Enrichment**</li></ul>  |    <ul><li>Data **Integration**</li><li>Data **Aggregation**</li><li>**Business Logic & Rules**</li></ul>  |
 |**Data Modeling**|   None      |    None    |    <ul><li>**Star Schema**</li><li>**Aggregated Objects**</li><li>**Flat Tables**</li></ul>   |
 
-
-### Data Quality
+## Data Quality & Governance
 
 To ensure the integrity and reliability of the dataset, a series of data quality checks for the silver and gold layer were done.
 
-* **Referential Integrity**: Primary key uniqueness and foreign key relationships
-* **Data Completeness**: NULL value detection in critical fields
-* **Data Consistency**: Establish standardized definitions, cross-table validation, business rules, and transformation logic
-* **Data Format**: Standardized formats and trimmed white spaces
-* **Logical Validation**: Date ranges, calculated field verification
+- **Referential Integrity**: Primary key uniqueness and foreign key relationships
+- **Data Completeness**: NULL value detection in critical fields
+- **Data Consistency**: Establish standardized definitions, cross-table validation, business rules, and transformation logic
+- **Data Format**: Standardized formats and trimmed white spaces
+- **Logical Validation**: Date ranges, calculated field verification
 
  The following code illustrates a snippet of thus quality checks from the silver layer.
 
@@ -101,35 +203,34 @@ FROM bronze.crm_cust_info
 
 For a more comprehensive overview of the data quality checks and results, please refer to the  [data_quality_checks](/tests/).
 A detailed issue log of the ETL pipeline was maintained and it tracked all the records of the anomalies per Medallion Layer and how their were remedied. The log for each incident detailed the specific issue, the root_cause analysis and the corrective action. For the full tracker, please click [**here**](docs/terravolt_changelog.xlsx)
-g
-## Data Integration
 
-Consolidate data from ERP & CRM into a centralized warehouse.
+## Exploratory Data Analysis (EDA)
 
-![Integration Model](docs/integration_model.png)
+The analysis followed a structured approach, covering various aspects of the data:
 
-## Data Modeling
+1. **Database Exploration:** Understanding the structure and relationships within the database.
+2. **Dimensions Exploration:** Analyzing the characteristics of the dimension tables (customers, products).
+3. **Date Range Exploration:** Identifying the time period covered by the data.
+4. **Measures Exploration:** Examining key metrics and their distributions.
+5. **Magnitude Exploration:** Understanding the scale of different measures.
+6. **Ranking Analysis:** Identifying top performers (e.g., customers, products).
+7. **Change Over Time Analysis:** Tracking trends and patterns over time.
+8. **Cumulative Analysis:** Examining the accumulated values of metrics.
+9. **Performance Analysis:** Evaluating the performance of different aspects of the business.
+10. **Data Segmentation:** Grouping data into meaningful segments for targeted analysis.
+11. **Part-to-Whole Analysis:** Understanding the contribution of different parts to the overall picture.
 
-The data model is designed to support efficient querying and analysis. It includes:
+The EDA process was conducted using  SQL queries. The results of the EDA are stored in the `output` directory within the `report` folder.
 
-* **Fact Table** (```gold.fact_orders```): Contains measurable data.
-* **Dimension Tables** (```gold.dim_customers``` and ```gold.dim_products```): Provide context for analysis.
-* **Data Marts**: Subsets of the data warehouse, focused on the specific business value.
+## Advanced Data Analytics  
 
-![Data Model](docs/data_model.png)
-
- 
-### Tools and technology
-
-- **[Datasets](datasets/):** Access to the project dataset (csv files).
-- **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Lightweight server for hosting your SQL database.
-- **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** GUI for managing and interacting with databases.
-- **[Git Repository](https://github.com/):** Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
-- **[Visual Studio Code](https://code.visualstudio.com/):** Write, debug and test SQL scripts and analytics code.
-- **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
-- **[Notion](https://www.notion.com/):** All-in-one tool for project management and organization.
+**Key Business Insights:**  
+**Customer Behavior Analysis** – Understanding buying patterns  
+**Product Performance Metrics** – Evaluating top-performing items  
+**Sales Trend Analysis** – Identifying revenue patterns  
 
 ## Clarifying Questions, Assumptions and Caveats
+
 ### Stakeholder Queries Identified During Data Quality Validation
 
 - **Unmatched cat_id (category_id)**
@@ -148,43 +249,104 @@ Further clarification is required to understand expected business behaviour.
 All records present reverse chronological values where the prd_end_dt precedes the prd_start_dt, violating temporal logic rules.
 A remediation approach—validated, tested, and approved—is demonstrated in the accompanying **[PNG file](docs/dates_solution_approved.png)** for stakeholder confirmation.
 
-
-
-
 ### Assumptions and Caveats
-- Products without orders: A considerable amount of products dont have orders for the period 201- 2022, which is an anomaly warrantung further examination.
--
- 
+
+- Products without orders: A considerable amount of products don't have orders for the period 201- 2022, which is an anomaly warranting further examination.
+- TerraVolt is a *fictional e-commerce company* created for the purpose of this data warehousing and analytics projects.
 
 ## Repository Structure
 
 ```
+
 data-warehouse-project/
 │
-├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+├── datasets/                               # ..
+│   ├── data_analysis_datasets/             # Datasets used for data analysis ..
+│   ├── data_warehouse_datasets/            # Datasets used in the architecture ..
+│   ├── source_datasets                     # Raw datasets used for the project (ERP and CRM data)
 │
-├── docs/                               # Project documentation and architecture details
-│   ├── etl.drawio                      # Draw.io file shows all different techniques and methods of ETL
-│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
-│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
-│   ├── data_flow.drawio                # Draw.io file for the data flow diagram
-│   ├── data_models.drawio              # Draw.io file for data models (star schema)
-│   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
+├── docs/                                   # Project documentation and architecture details
+│   ├── analytics/                          # Draw.io file shows all different techniques and methods of ETL
+│       ├── data_architecture.drawio        # Draw.io file shows the project's architecture
+│       ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
+│       ├── data_flow.drawio                # Draw.io file for the data flow diagram
+│   ├── data_warehouse/                     # Draw.io file for data models (star schema)
+│       ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files       
+│       ├── data_architecture.drawio        # Draw.io file shows the project's architecture
+│       ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
+│       ├── data_flow.drawio                # Draw.io file for the data flow diagram
+│       ├── data_models.drawio              # Draw.io file for data models (star schema)
+│   ├── python/                             # Consistent naming guidelines for tables, columns, and files
 │
-├── scripts/                            # SQL scripts for ETL and transformations
-│   ├── bronze/                         # Scripts for extracting and loading raw data
-│   ├── silver/                         # Scripts for cleaning and transforming data
-│   ├── gold/                           # Scripts for creating analytical models
+├── report/                                 # SQL scripts for ETL and transformations
+│   ├── data_analysis_datasets/             # Scripts for extracting and loading raw data
+│   ├── sql_output/                         # Scripts for cleaning and transforming data
+|
+├── scripts/                                # SQL scripts for ETL and transformations, and analysis
+│   ├── analytics_scripts/                  # Scripts for EDA(Exploratory Data Analysis) and advanced data analysis 
+│   ├── data_warehouse_scripts/             # Scripts for ETL( Extracting, Tranforming and Loading), and creating analytical models 
+│  
+├── tests/                                  # Test scripts and quality files
 │
-├── tests/                              # Test scripts and quality files
-│
-├── README.md                           # Project overview and instructions
-├── LICENSE                             # License information for the repository
-└── gitignore                           # Files and directories to be ignored by Git
+├── README.md                               # Project overview and instructions
+├── CONTRIBUTION.md                         # License information for the repository
+├── LICENSE                                 # License information for the repository
+└── gitignore                               # Files and directories to be ignored by Git
+
 ```
+
 ---
 
+## Tools and technology
+
+- **[Datasets](datasets/):** Access to the project dataset (csv files).
+- **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Lightweight server for hosting your SQL database.
+- **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** GUI for managing and interacting with databases.
+- **[Git Repository](https://github.com/):** Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
+- **[Visual Studio Code](https://code.visualstudio.com/):** Write, debug and test SQL scripts and analytics code.
+- **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
+- **[Notion](https://www.notion.com/):** All-in-one tool for project management and organization.
+
+## Report - Data Analysis and Business Insights
+
+This section summarizes the data analysis process and the resulting reports, providing valuable business insights.
+
+![eda analysis](https://github.com/Rudra-G-23/SQL-Data-Warehouse-Project/blob/main/docs/my_notes/eda_steps_analysis.svg)
+
+## Future Advancements
+
+The TerraVolt SQL EDW & BI ecosystem establishes a strong analytical foundation, but several strategic enhancements are planned to expand analytical depth, automation, and visual intelligence across the organization:
+
+### Python-Based Advanced Visualization Suite
+
+A dedicated analytics layer will be developed using Python visualization libraries such as Matplotlib, Plotly, and Seaborn. This extension will support:
+
+- High-granularity exploratory visuals (distribution maps, heatmaps, time-series patterns)
+- Product performance and customer cohort visualizations
+- Automated report generation using Jupyter notebooks
+
+### Data Quality Automation
+
+- Enhance data governance through:
+  Automated anomaly detection
+Data profiling scripts
 
 ## Author - [Mashoto Makobe](https://github.com/mmashoto)
 
-This project is a part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback or would like to colloborate, feel free to get in touch.
+This project is a part of my portfolio, showcasing the SQL skills essential for data analyst roles.  
+
+Let's stay in touch! Feel free to connect with me on the following platforms:
+
+<div align="center">  
+  
+  [![Gmail](https://img.shields.io/badge/Gmail-A4D65E.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mashoto.makobe99@gmail.com)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-A4D65E.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/makobemashoto/)
+  [![GitHub](https://img.shields.io/badge/Github-A4D65E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/makobemashoto)
+  <!---[![Medium](https://img.shields.io/badge/Medium-A4D65E.svg?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@mmashoto) -->
+</div>
+
+<!-- Back to Top Badge -->
+<div align="right">
+
+  [![Back to Top](https://img.shields.io/badge/%E2%8679-Back%20to%20Top-A8DADC?style=for-the-badge&logoColor=1D3557)](#top)
+</div>
