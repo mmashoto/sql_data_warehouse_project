@@ -65,18 +65,15 @@ This project delivers a scalable data warehousing solution that integrates data 
 
 **Data Warehouse**
 
-1. Data Freshness -->> How quickly data is updated in the warehouse after it changes in source systems.
-2. Pipeline Success Rate -->> Percentage of data pipelines that run successfully without errors.
-3. Data Accuracy & Consistency -->> How accurate and consistent the data is after cleaning and transformation.
-4. Query Performance -->> How fast users can run analytical queries on the warehouse.
-5. Warehouse Adoption -->> How many dashboards, reports, and teams rely on the data warehouse as the primary source.
-6. Reporting Time Reduction -->> How much faster reports are generated compared to before the warehouse existed.
+1. **Data Freshness** -Tracks how quickly data is updated in the warehouse using stored procedures that log load times, ensuring timely insights.
+2. **Pipeline Success Rate** - Measures the percentage of data pipelines that complete without errors, maintaining reliable data flow.
+3. **Data Accuracy & Consistency** - Validates data after cleaning and transformation to ensure trustworthy, consistent analytics.
 
  **Data Analytics**  
 
- 1. Sales Trends - Focusing on key metrics of the sales revenue, number of orders placed, and average order value (AOV).
- 2. Product Performance - Analyzing different product lines, market impact to inform strategic product decisions.
- 3. Customer Segmentation - 
+ 1. **Sales Trends** - Focusing on key metrics of the sales revenue, number of orders placed, and average order value (AOV).
+ 2. **Product Performance** - Analyzing different product lines, market impact to inform strategic product decisions.
+ 3. **Customer Segmentation** - Analyzing customer groups based on behavior, demographics, and purchase patterns to inform targeted marketing and strategic business decisions.
 
 ## Project Requirements
 
