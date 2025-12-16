@@ -72,19 +72,11 @@ This project delivers a scalable data warehousing solution that integrates data 
 5. Warehouse Adoption -->> How many dashboards, reports, and teams rely on the data warehouse as the primary source.
 6. Reporting Time Reduction -->> How much faster reports are generated compared to before the warehouse existed.
 
-**Customer Segmentation**  
+ **Data Analytics**  
 
-- Customer Lifetime Value (CLV)
-- Repeat Purchase Rate
-- Average Order Value (AOV)
-- Retention Rate
-
-**Product Performance**  
-
-- Top-Selling Products
-- Revenue by Category
-- Conversion Rate
-- Product Return Rate
+ 1. Sales Trends - Focusing on key metrics of the sales revenue, number of orders placed, and average order value (AOV).
+ 2. Product Performance - Analyzing different product lines, market impact to inform strategic product decisions.
+ 3. Customer Segmentation - 
 
 ## Project Requirements
 
@@ -242,6 +234,8 @@ The EDA process was conducted using  SQL queries. The results of the EDA are sto
 **Customer Behavior Analysis** – Understanding buying patterns  
 **Product Performance Metrics** – Evaluating top-performing items  
 **Sales Trend Analysis** – Identifying revenue patterns  
+
+For an in depth look at sights and recommendations, click **[here](/terravolt_ecommerce_performance__report.md)**
 
 ## Clarifying Questions, Assumptions and Caveats  
 
