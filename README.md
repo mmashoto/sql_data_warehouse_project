@@ -55,9 +55,9 @@ This project delivers a scalable data warehousing solution that integrates data 
 
 ### SQL Data Warehouse Initiative  
 
-- Data Warehouse: Designing a modern data warehouse using a medallion architecture bronze, silver and gold
-- ETL Pipeline: Extracting,transforming, and loading data from the data systems a into the data warehouse.
-- Data Modeling: Developing fact and dimension tables optimized for analytical queries.
+- **Data Warehouse**: Designing a modern data warehouse using a medallion architecture bronze, silver and gold
+- **ETL Pipeline**: Extracting,transforming, and loading data from the data systems a into the data warehouse.
+- **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
 
 ### EDA & Advanced Analytics Scope  
 
@@ -65,15 +65,15 @@ This project delivers a scalable data warehousing solution that integrates data 
 
 **Data Warehouse**
 
-1. **Data Freshness** -Tracks how quickly data is updated in the warehouse using stored procedures that log load times, ensuring timely insights.
-2. **Pipeline Success Rate** - Measures the percentage of data pipelines that complete without errors, maintaining reliable data flow.
-3. **Data Accuracy & Consistency** - Validates data after cleaning and transformation to ensure trustworthy, consistent analytics.
+1. **Data Freshness**: Tracks how quickly data is updated in the warehouse using stored procedures that log load times, ensuring timely insights.
+2. **Pipeline Success Rate**: Measures the percentage of data pipelines that complete without errors, maintaining reliable data flow.
+3. **Data Accuracy & Consistency**: Validates data after cleaning and transformation to ensure trustworthy, consistent analytics.
 
  **Data Analytics**  
 
- 1. **Sales Trends** - Focusing on key metrics of the sales revenue, number of orders placed, and average order value (AOV).
- 2. **Product Performance** - Analyzing different product lines, market impact to inform strategic product decisions.
- 3. **Customer Segmentation** - Analyzing customer groups based on behavior, demographics, and purchase patterns to inform targeted marketing and strategic business decisions.
+ 1. **Sales Trends**: Focusing on key metrics of the sales revenue, number of orders placed, and average order value (AOV).
+ 2. **Product Performance**: Analyzing different product lines, market impact to inform strategic product decisions.
+ 3. **Customer Segmentation**: Analyzing customer groups based on behavior, demographics, and purchase patterns to inform targeted marketing and strategic business decisions.
 
 ## Project Requirements
 
@@ -101,11 +101,11 @@ Leverage the **data warehouse** to develop **SQL-driven analytics and reporting 
 
 #### Specifications 
 
-1. **Sales Trends Analysis** – Track key sales metrics such as revenue, number of orders, and average order value (AOV) over multiple timeframes (monthly& yearly) to identify growth patterns and seasonality.
-2. **Product Performance Analysis** – Evaluate product lines and categories to determine top performers, underperformers, and market impact, supporting strategic product decisions.
-3. **Customer Segmentation** – Segment customers based on demographics, purchase behavior, and engagement metrics to inform targeted marketing campaigns and improve retention.
-4. **KPI Monitoring** – Build core KPIs including sales growth, repeat purchase rate, and customer churn to measure business performance and identify areas for improvement.
-5. **Data Visualization & Reporting** – Design clear, interactive dashboards and reports that enable stakeholders to explore data dynamically, spot anomalies, and make informed decisions.
+1. **Sales Trends Analysis**: Track key sales metrics such as revenue, number of orders, and average order value (AOV) over multiple timeframes (monthly& yearly) to identify growth patterns and seasonality.
+2. **Product Performance Analysis**: Evaluate product lines and categories to determine top performers, underperformers, and market impact, supporting strategic product decisions.
+3. **Customer Segmentation**: Segment customers based on demographics, purchase behavior, and engagement metrics to inform targeted marketing campaigns and improve retention.
+4. **KPI Monitoring**: Build core KPIs including sales growth, repeat purchase rate, and customer churn to measure business performance and identify areas for improvement.
+5. **Data Visualization & Reporting**: Design clear, interactive dashboards and reports that enable stakeholders to explore data dynamically, spot anomalies, and make informed decisions.
 
 ## Data Architecture  
 
@@ -227,9 +227,9 @@ Explore the SQL analysis for product performance [here](/scripts/analytics_scrip
 ### Insights and Recommendations
 
 **Key Business Insights:**  
-1. **Customer Behavior Analysis** – Identified that **35% of customers account for 70% of revenue**, with the top segment averaging **5 orders per month** and contributing to **60% of repeat purchases**, highlighting high-value customers and opportunities for targeted engagement.  
-2. **Product Performance Metrics** – The top 10 products contribute to **65% of total sales**, while **20% of products account for only 5% of revenue**. Average product margin is **28%**, indicating areas for portfolio optimization and strategic promotions.  
-3. **Sales Trend Analysis** – Revenue has grown **15% month-over-month**, with **Q4 accounting for 40% of annual sales** and daily peak sales occurring on Fridays. This informs forecasting, inventory planning, and promotional timing.  
+1. **Customer Behavior Analysis**: Identified that **35% of customers account for 70% of revenue**, with the top segment averaging **5 orders per month** and contributing to **60% of repeat purchases**, highlighting high-value customers and opportunities for targeted engagement.  
+2. **Product Performance Metrics**:  The top 10 products contribute to **65% of total sales**, while **20% of products account for only 5% of revenue**. Average product margin is **28%**, indicating areas for portfolio optimization and strategic promotions.  
+3. **Sales Trend Analysis**: Revenue has grown **15% month-over-month**, with **Q4 accounting for 40% of annual sales** and daily peak sales occurring on Fridays. This informs forecasting, inventory planning, and promotional timing.  
 
 For a comprehensive report of insights and actionable recommendations, click **[here](/terravolt_ecommerce_performance__report.md)**.
 
