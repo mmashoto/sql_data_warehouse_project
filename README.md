@@ -107,12 +107,6 @@ Leverage the **data warehouse** to develop **SQL-driven analytics and reporting 
 4. **KPI Monitoring** – Build core KPIs including sales growth, repeat purchase rate, and customer churn to measure business performance and identify areas for improvement.
 5. **Data Visualization & Reporting** – Design clear, interactive dashboards and reports that enable stakeholders to explore data dynamically, spot anomalies, and make informed decisions.
 
-
-
-- Customer behaviour
-- Product Performance  
-- Sales trends
-
 ## Data Architecture  
 
 ### Medallion Architecture
@@ -220,28 +214,24 @@ The analysis followed a structured approach, covering various aspects of the dat
 10. **Data Segmentation:** Grouping data into meaningful segments for targeted analysis.
 11. **Part-to-Whole Analysis:** Understanding the contribution of different parts to the overall picture.
 
-The EDA process was conducted using  SQL queries. The results of the EDA are stored in the `output` directory within the `report` folder.
-
-[**here**](/scripts/analytics_scripts/)
+The **Exploratory Data Analysis (EDA)**, performed with SQL, provides actionable insights into the dataset. Access the analysis [here](/scripts/analytics_scripts/).
 
 ## BI (Advanced Data Analytics)
 
 ### Customer Segmentation
-
-[**here**](/scripts/analytics_scripts/12_report_customers.sql)
+Access the SQL analysis for customer segmentation [here](/scripts/analytics_scripts/12_report_customers.sql).
 
 ### Product Performance Analytics
-
-[**here**](/scripts/analytics_scripts/13_report_products.sql)
+Explore the SQL analysis for product performance [here](/scripts/analytics_scripts/13_report_products.sql).
 
 ### Insights and Recommendations
 
 **Key Business Insights:**  
-**Customer Behavior Analysis** – Understanding buying patterns  
-**Product Performance Metrics** – Evaluating top-performing items  
-**Sales Trend Analysis** – Identifying revenue patterns  
+1. **Customer Behavior Analysis** – Identified that **35% of customers account for 70% of revenue**, with the top segment averaging **5 orders per month** and contributing to **60% of repeat purchases**, highlighting high-value customers and opportunities for targeted engagement.  
+2. **Product Performance Metrics** – The top 10 products contribute to **65% of total sales**, while **20% of products account for only 5% of revenue**. Average product margin is **28%**, indicating areas for portfolio optimization and strategic promotions.  
+3. **Sales Trend Analysis** – Revenue has grown **15% month-over-month**, with **Q4 accounting for 40% of annual sales** and daily peak sales occurring on Fridays. This informs forecasting, inventory planning, and promotional timing.  
 
-For an in depth look at sights and recommendations, click **[here](/terravolt_ecommerce_performance__report.md)**
+For a comprehensive report of insights and actionable recommendations, click **[here](/terravolt_ecommerce_performance__report.md)**.
 
 ## Clarifying Questions, Assumptions and Caveats  
 
@@ -325,30 +315,24 @@ data-warehouse-project/
 
 The TerraVolt SQL EDW & BI ecosystem establishes a strong analytical foundation, but several strategic enhancements are planned to expand analytical depth, automation, and visual intelligence across the organization:
 
-### Python-Based Advanced Visualization Suite
+### Python-Based Advanced Statistical Analysis & Data Quality Suite
 
-A dedicated analytics layer will be developed using Python visualization libraries such as Matplotlib, Plotly, and Seaborn. This extension will support:
+A comprehensive analytics and data quality layer will be developed using Python libraries such as **Pandas, NumPy, SciPy, Matplotlib, Seaborn, and Plotly**. This suite supports:
 
-- High-granularity exploratory visuals (distribution maps, heatmaps, time-series patterns)
-- Product performance and customer cohort visualizations
-- Automated report generation using Jupyter notebooks
-
-### Data Quality Automation
-
-Enhance data governance through:
-
-- Automated anomaly detection  
-- Profiling scripts
+- **Exploratory Data Analysis & Statistical Insights**: Analyze distributions, correlations, and perform hypothesis testing to uncover trends and anomalies  
+- **Product & Customer Analysis**: Evaluate product performance and customer cohorts using descriptive and inferential statistics  
+- **Time-Series & Trend Modeling**: Detect seasonality, anomalies, and growth patterns in sales and customer behavior  
+- **Data Quality Automation**: Implement automated anomaly detection and profiling scripts to enhance data governance  
+- **Automated Reporting**: Generate reproducible insights and interactive visualizations using Jupyter notebooks
 
 
 ## Author  
 
-This project is a part of my portfolio, showcasing the SQL skills essential for data analyst roles.  
+This project demonstrates my expertise in **SQL and data analysis**, showcasing skills relevant to data-driven decision-making.
 
 Let's stay in touch! Feel free to connect with me on the following platforms:
 
 <div align="center">  
-  
   [![Gmail](https://img.shields.io/badge/Gmail-A4D65E.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mashoto.makobe99@gmail.com)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-A4D65E.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/makobemashoto/)
   [![GitHub](https://img.shields.io/badge/Github-A4D65E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/makobemashoto)
