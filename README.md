@@ -7,12 +7,12 @@
 
 <!-----table of content--->  
 
-<h1 id="top"> Table of Contents</h1>
+<h1 id="top">Table of Contents</h1>
 
 1. [Executive Summary](#executive-summary)  
 2. [Company Background](#company-background)
 3. [Project Overview](#project-overview)
-    - [SQL Data Warehouse Initiative](#sql-data-warehouse-initiative)  
+    1. [SQL Data Warehouse Initiative](#sql-data-warehouse-initiative)  
     2. [EDA & Advanced Analytics Scope](#eda--advanced-analytics-scope)  
     3. [North Star Metrics](#north-star-metrics)  
 4. [Project Requirements](#project-requirements)
@@ -39,7 +39,7 @@
 Founded in **2008**, **TerraVolt** is a global e-commerce enterprise specializing in **bicycles, components, and cycling apparel**. The company operates across multiple continents, leveraging digital platforms to deliver high-performance products to an international customer base.
 As TerraVolt’s operations expanded, its data environment became increasingly complex, with disparate systems generating large volumes of transactional, customer, and operational data. The absence of centralized integration led to data silos, inconsistent reporting, and limited analytical visibility across business functions.
 
-To overcome these challenges, TerraVolt launched the **SQL Data Warehouse Initiative** - a strategic data modernization project designed to consolidate fragmented data sources into a **centralized analytical ecosystem**. This warehouse will enable a single source of truth for business intelligence, support data-driven decision-making, and enhance enterprise performance through reliable, scalable, and governed analytics infrastructure.
+To overcome these challenges, TerraVolt launched the **SQL Data Warehouse Initiative**, a strategic data modernization project designed to consolidate fragmented data sources into a **centralized analytical ecosystem**. This warehouse will enable a single source of truth for business intelligence, support data-driven decision-making, and enhance enterprise performance through reliable, scalable, and governed analytics infrastructure.
 
 In addition to the data warehousing build, this project incorporates an advanced Data Analysis and Business Intelligence (BI) capability. This includes comprehensive Exploratory Data Analysis (EDA), statistical profiling, time-series trend evaluation, and customer/product performance analytics. The BI layer strengthens TerraVolt’s ability to derive meaningful insights by enabling dynamic dashboards, KPI monitoring, forecasting foundations, and real-time decision support, ensuring that the SQL warehouse becomes both an analytical engine and a business-facing intelligence platform.
 
@@ -48,8 +48,8 @@ In addition to the data warehousing build, this project incorporates an advanced
 **TerraVolt** is a **global e-commerce company**, founded in **2014**, that provides an extensive range of **bikes, cycling components, and apparel**. With operations in **North America, Europe, Asia, and Africa**, TerraVolt has built a strong reputation for digital innovation, product quality, and customer engagement.
 The company’s rapid international growth has led to an increasingly complex data landscape, spanning **ERP, CRM, e-commerce, and marketing systems**. This growth underscored the need for a unified data management framework to enhance operational insight and analytical consistency.
 
-The **SQL EDW project** represents a key milestone in TerraVolt’s data strategy—integrating global data assets into a single, structured, and scalable repository.  
-This project delivers a scalable data warehousing solution that integrates data from various sources, empowering data-driven decision-making through a robust **data architecture, ETL pipeline, and  data modeling**. By leveraging industry best practices and a **medallion data architecture (Bronze, Silver, and Gold)**, this solution ensures data quality, consistency and reliability.
+The **SQL EDW project** represents a key milestone in TerraVolt’s data strategy, integrating global data assets into a single, structured, and scalable repository.  
+This project delivers a scalable data warehousing solution that integrates data from various sources, empowering data-driven decision-making through a robust **data architecture, ETL pipeline, and data modeling**. By leveraging industry best practices and a **medallion data architecture (Bronze, Silver, and Gold)**, this solution ensures data quality, consistency and reliability.
 
 ## Project Overview
 
@@ -352,5 +352,5 @@ Let's stay in touch! Feel free to connect with me on the following platforms:
 <!-- Back to Top Badge -->
 <div align="right">
 
-  [![Back to Top](https://img.shields.io/badge/%E2%8679-Back%20to%20Top-A8DADC?style=for-the-badge&logoColor=1D3557)](#top)
+  [![Back to Top](https://img.shields.io/badge/Back%20to%20Top-A8DADC?style=for-the-badge&logoColor=1D3557)](#top)
 </div>
