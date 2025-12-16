@@ -137,7 +137,6 @@ The data model is designed to support efficient querying and analysis. It includ
 - **Dimension Tables** (```gold.dim_customers``` and ```gold.dim_products```): Provide context for analysis.
 - **Data Marts**: Subsets of the data warehouse, focused on the specific business value.
 
-![Data Model](docs/data_warehouse/data_model(transparent).png)  
 ![Data Model](docs/data_warehouse/data_model(transparent).svg)
 
 ## ETL Pipeline Design  
