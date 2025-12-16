@@ -81,7 +81,7 @@ This project delivers a scalable data warehousing solution that integrates data 
 
 #### Objective  
 
-Develop a **SQL Server-based** data warehouse consolidating **sales data** for analytical reporting.  
+Develop a SQL Server-based data warehouse consolidating sales data for analytical reporting.
 
 #### Specifications
 
@@ -97,7 +97,17 @@ Develop a **SQL Server-based** data warehouse consolidating **sales data** for a
 
 #### Objective
 
-Develop SQL based analytics to deliver detailed insights into:
+Leverage the **data warehouse** to develop **SQL-driven analytics and reporting solutions** that provide actionable insights for TerraVolt’s business stakeholders. Focus on uncovering trends, measuring performance, and enabling data-driven decisions across sales, products, and customer engagement.
+
+#### Specifications 
+
+1. **Sales Trends Analysis** – Track key sales metrics such as revenue, number of orders, and average order value (AOV) over multiple timeframes (monthly& yearly) to identify growth patterns and seasonality.
+2. **Product Performance Analysis** – Evaluate product lines and categories to determine top performers, underperformers, and market impact, supporting strategic product decisions.
+3. **Customer Segmentation** – Segment customers based on demographics, purchase behavior, and engagement metrics to inform targeted marketing campaigns and improve retention.
+4. **KPI Monitoring** – Build core KPIs including sales growth, repeat purchase rate, and customer churn to measure business performance and identify areas for improvement.
+5. **Data Visualization & Reporting** – Design clear, interactive dashboards and reports that enable stakeholders to explore data dynamically, spot anomalies, and make informed decisions.
+
+
 
 - Customer behaviour
 - Product Performance  
