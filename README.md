@@ -333,10 +333,7 @@ This project demonstrates my expertise in **SQL and data analysis**, showcasing 
 Let's stay in touch! Feel free to connect with me on the following platforms:
 
 <div align="center">  
-  [![Gmail](https://img.shields.io/badge/Gmail-A4D65E.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mashoto.makobe99@gmail.com)
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-A4D65E.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/makobemashoto/)
-  [![GitHub](https://img.shields.io/badge/Github-A4D65E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/makobemashoto)
-  <!---[![Medium](https://img.shields.io/badge/Medium-A4D65E.svg?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@mmashoto) -->
+  [![Gmail](https://img.shields.io/badge/Gmail-A4D65E.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mashoto.makobe99@gmail.com) [![LinkedIn](https://img.shields.io/badge/LinkedIn-A4D65E.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/makobemashoto/) [![GitHub](https://img.shields.io/badge/Github-A4D65E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/makobemashoto) <!---[![Medium](https://img.shields.io/badge/Medium-A4D65E.svg?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@mmashoto) -->
 </div>
 
 <!-- Back to Top Badge -->
