@@ -338,10 +338,10 @@ Let's stay in touch! Feel free to connect with me on the following platforms:
   <a href="mailto:mashoto.makobe99@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-A4D65E?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
-  <a href="https://www.linkedin.com/in/makobemashoto/">
+  <a href="https://www.linkedin.com/in/mmashoto">
     <img src="https://img.shields.io/badge/LinkedIn-A4D65E?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  <a href="https://github.com/makobemashoto">
+  <a href="https://github.com/mmashoto/mmashoto/blob/main/README.md">
     <img src="https://img.shields.io/badge/GitHub-A4D65E?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </div>
